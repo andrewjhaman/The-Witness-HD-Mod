@@ -1,5 +1,5 @@
 # The Witness HD Mod
-This mod patches The Witness (2016) binary to make the circles on panels have more vertices.
+This mod patches The Witness (2016) binary to make the circles on panels have more vertices. The patcher is currently tested only on the latest Steam version.
 
 ## Recommended Secret Settings
 The Witness exposes some secret settings that you can change by adding them to the data/Local.variables file in The Witness install directory

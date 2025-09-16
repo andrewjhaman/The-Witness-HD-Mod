@@ -86,7 +86,6 @@ static const unsigned char draw_dot_02_search_bytes[] = {
     0x48, 0x8B, 0xCF,
     0xBD, 0x18, 0x00, 0x00, 0x00
 };
-
 static const unsigned char draw_dot_02_replacement_bytes[] = {
     0x0F, 0xA3, 0xD0,
     0x73, 0x37,
@@ -94,6 +93,21 @@ static const unsigned char draw_dot_02_replacement_bytes[] = {
     0xBD, 0xff, 0x00, 0x00, 0x00
 };
 
+
+static const unsigned char hint_ring_search_bytes[] = {
+    0x48, 0x8D, 0x4D, 0x98,
+    0xC7, 0x44, 0x24, 0x20, 0x14, 0x00, 0x00, 0x00,
+    0x41, 0x0F, 0x28, 0xD9,
+    0x0F, 0x28, 0xD7,
+    0x8B, 0xD0,
+};
+static const unsigned char hint_ring_replacement_bytes[] = {
+    0x48, 0x8D, 0x4D, 0x98,
+    0xC7, 0x44, 0x24, 0x20, 0xff, 0x00, 0x00, 0x00,
+    0x41, 0x0F, 0x28, 0xD9,
+    0x0F, 0x28, 0xD7,
+    0x8B, 0xD0,
+};
 
 Patch patches[] = {
     {
@@ -110,6 +124,11 @@ Patch patches[] = {
         .name = "draw_dot_02",
         .search_bytes = BYTE_ARRAY_TO_STRING(draw_dot_02_search_bytes),
         .replacement_bytes = BYTE_ARRAY_TO_STRING(draw_dot_02_replacement_bytes)
+    },
+    {
+        .name = "hint_ring",
+        .search_bytes = BYTE_ARRAY_TO_STRING(hint_ring_search_bytes),
+        .replacement_bytes = BYTE_ARRAY_TO_STRING(hint_ring_replacement_bytes)
     },
 };
 #define PATCH_COUNT (sizeof(patches) / sizeof(patches[0]))
